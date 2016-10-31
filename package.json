@@ -29,7 +29,6 @@
     "eslint-plugin-import": "^2.0.1",
     "eslint-plugin-jsx-a11y": "^2.2.3",
     "eslint-plugin-react": "^6.4.1",
-    "html-webpack-plugin": "^2.24.0",
     "jest": "^16.0.2",
     "jest-enzyme": "^2.0.0",
     "webpack": "^1.13.2"
@@ -38,6 +37,7 @@
     "chai": "^3.5.0",
     "chai-jest-snapshot": "^0.2.1",
     "enzyme": "^2.5.1",
+    "html-webpack-plugin": "^2.24.1",
     "react": "^15.3.2",
     "react-addons-test-utils": "^15.3.2",
     "react-dom": "^15.3.2",
