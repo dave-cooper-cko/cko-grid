@@ -5,15 +5,16 @@ import TableHeadings from '../TableHeadings';
 
 let headings;
 
-beforeEach(() => {
-  headings = {
-    name: 'Name',
-    age: 'Age',
-    favouriteFood: 'Favourite Food',
-  };
-});
 
 describe('TableHeadings', () => {
+  beforeEach(() => {
+    headings = {
+      name: 'Name',
+      age: 'Age',
+      favouriteFood: 'Favourite Food',
+    };
+  });
+
   it('Renders successfully', () => {
     const component = shallow(<TableHeadings headings={headings} />);
 

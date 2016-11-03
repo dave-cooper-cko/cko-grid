@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <meta charset="UTF-8">
+    <script src="../node_modules/angular/angular.js"></script>
+    <script src="../node_modules/react/dist/react.js"></script>
+    <script src="../node_modules/react-dom/dist/react-dom.js"></script>
+    <script src="../node_modules/ngreact/ngReact.js"></script>
+    <script>var app = angular.module('app', ['react']); window.getAngularContext = function() { return app; }</script>
+  </head>
+  <body>
+    <div ng-controller="HomeController">
+      <react-component name="CkoGrid" props="info" watch-depth="reference"/>
+    </div>
+  </body>
+</html>
