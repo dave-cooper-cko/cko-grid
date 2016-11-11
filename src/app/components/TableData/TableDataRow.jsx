@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './styles.css';
 
 const propTypes = {
   headings: React.PropTypes.object.isRequired,
@@ -15,8 +16,13 @@ function TableDataRow(props) {
   return (
     <tr>
       {headings.map(
-        (heading, index) => <td key={index}>{getTdValue}{props.data[heading]}</td>
-    )}
+        (heading, index) =>
+          <td key={index}>
+            <div className={styles.container}>
+              {getTdValue}{props.data[heading]}
+            </div>
+          </td>
+      )}
     </tr>
   );
 }

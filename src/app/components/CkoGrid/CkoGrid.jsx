@@ -1,12 +1,14 @@
 import React from 'react';
-import Rx from 'rxjs/Rx';
+import { merge } from 'lodash';
 import TableHeadings from '../TableHeadings';
 import { TableDataRows } from '../TableData';
+import Search from '../Search';
+import styles from './styles.css';
 
 const propTypes = {
   headings: React.PropTypes.object.isRequired,
-  data: React.PropTypes.array.isRequired,
-  refreshData: React.PropTypes.object.isRequired,
+  refreshData: React.PropTypes.func.isRequired,
+  search: React.PropTypes.bool,
 };
 
 class CkoGrid extends React.Component {
@@ -15,26 +17,43 @@ class CkoGrid extends React.Component {
 
     this.state = {
       headings: props.headings,
-      data: props.data,
-      refreshData: props.refreshData,
+      data: [],
+      search: props.search,
+      remoteState: {},
     };
 
-    this.refreshData = this.refreshData.bind(this);
+    this.refreshData = props.refreshData;
+
+    this.setRemoteState = this.setRemoteState.bind(this);
   }
 
   componentDidMount() {
-    this.refreshData();
+    this.refreshData(this.state.remoteState)
+      .subscribe(data => this.setState({ data }));
   }
 
-  refreshData() {
-    this.state.refreshData.subscribe(data => this.setState({ data }));
+  setRemoteState(newState) {
+    if (typeof newState !== 'undefined' && newState !== {}) {
+      const newRemoteState = merge(this.state.remoteState, newState);
+
+      this.setState({ remoteState: newRemoteState });
+      this.refreshData(this.state.remoteState)
+        .subscribe(data => this.setState({ data }));
+    }
   }
 
   render() {
     return (
       <div>
-        <table>
-          <TableHeadings headings={this.state.headings} />
+        <Search
+          shouldRender={this.state.search}
+          setRemoteState={this.setRemoteState}
+        />
+        <table className={styles.grid}>
+          <TableHeadings
+            headings={this.state.headings}
+            setRemoteState={this.setRemoteState}
+          />
           <TableDataRows
             data={this.state.data}
             headings={this.state.headings}

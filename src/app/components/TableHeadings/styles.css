@@ -1,0 +1,46 @@
+thead {
+  tr {
+    th {
+      cursor: pointer;
+      font-weight: bold;
+      border: 1px solid;
+      border-bottom: 2px solid;
+    }
+  }
+}
+
+.container {
+  padding-left: 8px;
+
+  .title {
+    float: left;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-right: 10px;
+  }
+
+  .selector {
+    float: right;
+    width: 12px;
+    height: 50px;
+    font-size: 60%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    .arrowActive {
+      color: blue;
+    }
+
+    .arrowInactive {
+      color: grey;
+    }
+  }
+
+  .wrapper {
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+}
