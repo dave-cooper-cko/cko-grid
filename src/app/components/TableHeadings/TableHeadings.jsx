@@ -11,7 +11,6 @@ class TableHeadings extends React.Component {
     super(props);
 
     this.state = {
-      headings: props.headings,
       sortColumn: '',
       sortDirection: '',
     };
@@ -41,7 +40,7 @@ class TableHeadings extends React.Component {
   }
 
   render() {
-    const headingKeys = Object.keys(this.state.headings);
+    const headingKeys = Object.keys(this.props.headings);
 
     return (
       <thead>
@@ -51,7 +50,7 @@ class TableHeadings extends React.Component {
               <div className={styles.container}>
                 <div className={styles.title}>
                   <div className={styles.wrapper}>
-                    {this.state.headings[header].name}
+                    {this.props.headings[header].name}
                   </div>
                 </div>
                 <div className={styles.selector}>

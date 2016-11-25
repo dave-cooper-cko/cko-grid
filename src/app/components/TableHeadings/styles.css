@@ -1,10 +1,16 @@
 thead {
   tr {
     th {
-      cursor: pointer;
       font-weight: bold;
-      border: 1px solid;
-      border-bottom: 2px solid;
+      border: 1px solid #dcddde;
+      border-bottom: 2px solid  #dcddde;
+      text-align: left;
+      cursor: pointer;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
     }
   }
 }
