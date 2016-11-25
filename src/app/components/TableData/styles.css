@@ -1,3 +1,13 @@
-.container {
-  padding-left: 8px;
+tr {
+  td {
+    border: 1px solid #dcddde;
+    height: 50px;
+
+    .container {
+      padding: 15px 8px;
+      max-height: 50px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+  }
 }

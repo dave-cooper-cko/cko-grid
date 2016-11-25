@@ -7,7 +7,7 @@ const propTypes = {
 };
 
 function getTdValue(heading, data) {
-  return data[heading] ? data[heading] : 'NO DATA';
+  return data[heading];
 }
 
 function TableDataRow(props) {
