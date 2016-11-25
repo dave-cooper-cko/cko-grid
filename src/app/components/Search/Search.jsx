@@ -9,7 +9,6 @@ class Search extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      shouldRender: props.shouldRender,
       searchText: '',
     };
 
@@ -24,7 +23,7 @@ class Search extends React.Component {
   }
 
   render() {
-    if (!this.state.shouldRender) {
+    if (!this.props.shouldRender) {
       return null;
     }
 
