@@ -1,0 +1,44 @@
+.pagination {
+  padding: 10px;
+  border: 1px solid #dcddde;
+  background-color: white;
+
+
+  >div {
+    display: inline-block;
+    width: 33%;
+
+    &:last-child {
+      width: 34%;
+    }
+  }
+
+  .pageSelect {
+    text-align: center;
+
+    .nextPage {
+      display: inline-block;
+      transform: rotate(-90deg);
+      margin-left: 10px;
+      color: blue;
+      cursor: pointer;
+    }
+
+    .previousPage {
+      display: inline-block;
+      transform: rotate(90deg);
+      margin-right: 10px;
+      color: blue;
+      cursor: pointer;
+    }
+  }
+
+  .goto {
+    text-align: right;
+
+    .pageInput {
+      width: 30px;
+      text-align: center;
+    }
+  }
+}
