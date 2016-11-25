@@ -18,7 +18,7 @@ const common = {
       filename: 'bundle.js',
     },
     loaders: [
-      { test: /\.jsx$/, exclude: /(node_modules|__tests__)/, loader: 'babel-loader', query: { presets: ['es2015'] } },
+      { test: /\.jsx$/, exclude: /(node_modules)/, loader: 'babel-loader', query: { presets: ['es2015'] } },
       { test: /\.css$/, include: path.resolve(__dirname, 'src/'), loader: ExtractTextPlugin.extract('css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss?parser=postcss-less') },
     ],
   },
@@ -30,7 +30,7 @@ if (TARGET === 'dev') {
     entry: [`${CLIENT_DIR}/app.js`, `${COMPONENT_DIR}/CkoGrid/CkoGrid.jsx`],
     module: {
       loaders: [
-        { test: /\.js$/, exclude: /(node_modules|__tests__)/, loader: 'babel-loader', query: { presets: ['es2015'] } },
+        { test: /\.js$/, exclude: /(node_modules)/, loader: 'babel-loader', query: { presets: ['es2015'] } },
       ],
     },
     plugins: [
