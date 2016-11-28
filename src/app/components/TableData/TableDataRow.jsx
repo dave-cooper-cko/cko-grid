@@ -6,10 +6,6 @@ const propTypes = {
   data: React.PropTypes.object.isRequired,
 };
 
-function getTdValue(heading, data) {
-  return data[heading];
-}
-
 function TableDataRow(props) {
   const headings = Object.keys(props.headings);
 
@@ -19,7 +15,7 @@ function TableDataRow(props) {
         (heading, index) =>
           <td key={index}>
             <div className={styles.container}>
-              {getTdValue}{props.data[heading]}
+              {props.data[heading]}
             </div>
           </td>
       )}
