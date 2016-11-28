@@ -22,7 +22,7 @@ class TableHeadings extends React.Component {
   toggleSort(sortColumn) {
     let sortDirection;
 
-    if (!this.state.sortDirection) {
+    if (!this.state.sortDirection || sortColumn !== this.state.sortColumn) {
       sortDirection = 'desc';
     } else {
       sortDirection = this.state.sortDirection === 'desc' ? 'asc' : 'desc';
@@ -46,17 +46,28 @@ class TableHeadings extends React.Component {
       <thead>
         <tr>
           {headingKeys.map((header, index) =>
-            <th key={index} onClick={() => { this.toggleSort(header); }}>
+            <th
+              key={index}
+              onClick={
+                this.props.headings[header].sort ?
+                  () => { this.toggleSort(header); }
+                  : false
+                }
+            >
               <div className={styles.container}>
                 <div className={styles.title}>
                   <div className={styles.wrapper}>
                     {this.props.headings[header].name}
                   </div>
                 </div>
-                <div className={styles.selector}>
-                  <span className={(header === this.state.sortColumn) && (this.state.sortDirection === 'asc') ? styles.arrowActive : styles.arrowInactive}>▲</span>
-                  <span className={(header === this.state.sortColumn) && (this.state.sortDirection === 'desc') ? styles.arrowActive : styles.arrowInactive}>▼</span>
-                </div>
+                { this.props.headings[header].sort ?
+                  <div className={styles.selector}>
+                    <span className={(header === this.state.sortColumn) && (this.state.sortDirection === 'asc') ? styles.arrowActive : styles.arrowInactive}>▲</span>
+                    <span className={(header === this.state.sortColumn) && (this.state.sortDirection === 'desc') ? styles.arrowActive : styles.arrowInactive}>▼</span>
+                  </div>
+                  :
+                  false
+                }
               </div>
             </th>
           )}
