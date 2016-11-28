@@ -8,6 +8,8 @@ The project follows the [Airbnb ESLint standards](https://github.com/airbnb/java
 
 # Dependencies
 
+The project requires a version of [Node](https://nodejs.org/) that is >= 6. If you use [NVM](https://github.com/creationix/nvm) then this will be taken care of for you, since this project's `nvmrc` file specifies it.
+
 The dependencies for this project are installed using [Yarn](https://github.com/yarnpkg/yarn).
 
 To add a dependency to the project, please use `yarn add <NPM package here>`.
