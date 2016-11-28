@@ -12,11 +12,11 @@ const COMPONENT_DIR = path.resolve(__dirname, 'src', 'app', 'components');
 const TARGET = process.env.npm_lifecycle_event;
 
 const common = {
+  output: {
+    path: BUILD_DIR,
+    filename: 'bundle.js',
+  },
   module: {
-    output: {
-      path: BUILD_DIR,
-      filename: 'bundle.js',
-    },
     loaders: [
       { test: /\.jsx$/, exclude: /(node_modules)/, loader: 'babel-loader', query: { presets: ['es2015'] } },
       { test: /\.css$/, include: path.resolve(__dirname, 'src/'), loader: ExtractTextPlugin.extract('css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss?parser=postcss-less') },
