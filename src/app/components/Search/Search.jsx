@@ -1,7 +1,7 @@
 import React from 'react';
 
 const propTypes = {
-  shouldRender: React.PropTypes.bool.isRequired,
+  shouldRender: React.PropTypes.bool,
   setRemoteState: React.PropTypes.func.isRequired,
 };
 
