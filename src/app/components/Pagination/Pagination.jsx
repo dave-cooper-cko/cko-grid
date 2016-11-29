@@ -30,9 +30,15 @@ class Pagination extends React.Component {
     this.goToPage = this.goToPage.bind(this);
   }
 
-  onResultsPerPageUpdate(resultsPerPage) {
-    this.setState(resultsPerPage);
-    this.setRemoteState(resultsPerPage);
+  onResultsPerPageUpdate(e) {
+    const resultsPerPage = e.target.value;
+
+    if (resultsPerPage < 1) {
+      return;
+    }
+
+    this.setState({ resultsPerPage });
+    this.setRemoteState({ resultsPerPage });
   }
 
   previousPage() {
@@ -54,7 +60,8 @@ class Pagination extends React.Component {
 
     if (!newPage ||
       newPage < 1 ||
-      newPage > Math.ceil(this.props.totalRows / this.state.resultsPerPage)) {
+      newPage > Math.ceil(this.props.totalRows / this.state.resultsPerPage) ||
+      typeof newPage !== 'number') {
       return;
     }
 
@@ -84,9 +91,7 @@ class Pagination extends React.Component {
         <div className={styles.numResultsSelect}>
           <select
             value={this.state.resultsPerPage}
-            onChange={(e) => {
-              this.onResultsPerPageUpdate({ resultsPerPage: e.target.value });
-            }}
+            onChange={this.onResultsPerPageUpdate}
           >
             {resultOptions}
           </select>
