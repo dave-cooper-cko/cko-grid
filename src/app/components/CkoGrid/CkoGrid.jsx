@@ -63,10 +63,9 @@ class CkoGrid extends React.Component {
       <div>
         <div className={styles.toolbar}>
           <h3>{this.props.title}</h3>
-          <Search
-            shouldRender={this.props.search}
-            setRemoteState={this.setRemoteState}
-          />
+          { this.props.search &&
+            <Search setRemoteState={this.setRemoteState} />
+          }
         </div>
         <table className={styles.grid}>
           <TableHeadings
@@ -78,12 +77,13 @@ class CkoGrid extends React.Component {
             headings={this.props.headings}
           />
         </table>
-        <Pagination
-          shouldRender={this.props.pagination}
-          setRemoteState={this.setRemoteState}
-          totalRows={this.state.totalRows}
-          startIndex={this.state.startIndex}
-        />
+        { this.props.pagination &&
+          <Pagination
+            setRemoteState={this.setRemoteState}
+            totalRows={this.state.totalRows}
+            startIndex={this.state.startIndex}
+          />
+        }
       </div>
     );
   }

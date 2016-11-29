@@ -2,7 +2,6 @@ import React from 'react';
 import styles from './styles.css';
 
 const propTypes = {
-  shouldRender: React.PropTypes.bool,
   setRemoteState: React.PropTypes.func.isRequired,
   totalRows: React.PropTypes.number.isRequired,
 };
@@ -64,10 +63,6 @@ class Pagination extends React.Component {
   }
 
   render() {
-    if (!this.props.shouldRender) {
-      return null;
-    }
-
     // Generate list of options for number of results.
     const resultOptions = this.resultOptions.map(
       (option, index) => <option key={index} value={option.value}>{option.name}</option>

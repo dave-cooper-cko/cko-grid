@@ -10,7 +10,7 @@ describe('CkoGrid', () => {
     refreshData = sinon.stub();
   });
 
-  it('Renders', () => {
+  it('Renders successfully', () => {
     const headings = {
       name: 'Name',
       age: 'Age',

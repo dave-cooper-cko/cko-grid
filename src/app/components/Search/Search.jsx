@@ -1,7 +1,6 @@
 import React from 'react';
 
 const propTypes = {
-  shouldRender: React.PropTypes.bool,
   setRemoteState: React.PropTypes.func.isRequired,
 };
 
@@ -23,10 +22,6 @@ class Search extends React.Component {
   }
 
   render() {
-    if (!this.props.shouldRender) {
-      return null;
-    }
-
     return (
       <div>
         <input
