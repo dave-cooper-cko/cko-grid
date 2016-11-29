@@ -1,7 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import sinon from 'sinon';
-import { spyOnComponentMethod } from 'sinon-spy-react';
 import TableHeadings from '../TableHeadings';
 
 let headings;
