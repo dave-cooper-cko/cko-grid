@@ -9,7 +9,7 @@ describe('Search', () => {
   it('Renders successfully', () => {
     const component = shallow(<Search setRemoteState={setRemoteState} />);
 
-    expect(component).toBeDefined();
+    expect(component.isEmpty()).toBeFalsy();
   });
 
   it('Sets the correct searchText when text is entered', () => {

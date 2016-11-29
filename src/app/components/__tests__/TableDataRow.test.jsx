@@ -19,7 +19,7 @@ describe('TableDataRow', () => {
   it('Renders correctly', () => {
     const component = shallow(<TableDataRow headings={headings} data={data} />);
 
-    expect(component).toBeDefined();
+    expect(component.isEmpty()).toBeFalsy();
   });
 
   it('Renders the correct number of data cells', () => {

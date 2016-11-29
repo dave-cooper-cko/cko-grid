@@ -27,7 +27,7 @@ describe('CkoGrid', () => {
       />
     );
 
-    expect(component).toBeDefined();
+    expect(component.isEmpty()).toBeFalsy();
   });
 
   it('Renders optional components correctly', () => {

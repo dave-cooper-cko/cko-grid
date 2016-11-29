@@ -22,7 +22,7 @@ describe('TableDataRows', () => {
   it('Renders successfully', () => {
     const component = shallow(<TableDataRows data={data} headings={headings} />);
 
-    expect(component).toBeDefined();
+    expect(component.isEmpty()).toBeFalsy();
   });
 
   it('Generates the right number of TableRows', () => {

@@ -24,7 +24,7 @@ describe('TableHeadings', () => {
       />
     );
 
-    expect(component).toBeDefined();
+    expect(component.isEmpty()).toBeFalsy();
   });
 
   it('Renders the correct number of headings', () => {
