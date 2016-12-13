@@ -1,6 +1,10 @@
 thead {
   tr {
     th {
+      &.expander {
+        text-align: center;
+      }
+
       font-weight: bold;
       border: 1px solid #dcddde;
       border-bottom: 2px solid  #dcddde;
