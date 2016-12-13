@@ -4,6 +4,7 @@ import styles from './styles.css';
 const propTypes = {
   headings: React.PropTypes.object.isRequired,
   setRemoteState: React.PropTypes.func.isRequired,
+  expandable: React.PropTypes.bool,
 };
 
 class TableHeadings extends React.Component {
@@ -45,6 +46,11 @@ class TableHeadings extends React.Component {
     return (
       <thead>
         <tr>
+          { this.props.expandable &&
+            <th className={styles.expander}>
+              +
+            </th>
+          }
           {headingKeys.map((header, index) =>
             <th
               key={index}
