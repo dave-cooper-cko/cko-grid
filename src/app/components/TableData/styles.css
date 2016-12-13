@@ -9,5 +9,20 @@ tr {
       text-overflow: ellipsis;
       overflow: hidden;
     }
+
+    div {
+      &.expander {
+        text-align: center;
+        transform: rotate(-90deg) translateZ(0);
+        cursor: pointer;
+        transition: transform 0.5s;
+      }
+
+      &.expanded {
+        text-align: center;
+        cursor: pointer;
+        transition: transform 0.5s;
+      }
+    }
   }
 }
